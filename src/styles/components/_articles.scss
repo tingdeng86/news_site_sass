@@ -1,0 +1,16 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.articles-container{
+    display: block;
+    padding-bottom: em(10);
+    @include mq($phoneLandscape){
+        @include grid(2, 1fr);
+       gap:em(20);
+       
+    }
+    @include mq($tabletPortrait){
+        @include grid(3, 1fr);
+       gap:em(20);
+    }
+}

@@ -1,0 +1,43 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+.article{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    border: 1px dotted grey;
+    gap:em(20);
+    margin-bottom: em(20);
+    // align-items: center;
+    figure{
+        @include flatten(false);
+        img{
+            @include img-cover(false);
+            aspect-ratio: 16 / 12;
+        }
+    }
+    .details{
+        padding:em(10) 0;
+        padding-right: em(15);
+        h2{
+            @include flatten(false);
+        }
+        p{
+            @include flatten(false);
+            margin-top: em(10);
+            margin-bottom: em(10);
+        }
+    }
+    @include mq($phoneLandscape){
+        display: block;
+        margin-bottom: 0;
+        figure{
+            // height: em(210);
+            
+        }
+        .details{
+            padding: em(10);
+        }
+       
+    }
+
+    
+}
